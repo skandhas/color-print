@@ -31,6 +31,7 @@ typedef struct cp_state * cp_state_t;
 /* Module Functions */
 cp_state_t cp_init();
 int cp_print( cp_state_t, enum cp_color, const char * );
+void cp_reset(struct cp_state * cp);
 void cp_close(cp_state_t );
 
 #if defined(__cplusplus)

@@ -43,11 +43,17 @@ cp_init()
 int 
 cp_print(cp_state_t cp, enum cp_color color, const char * text)
 {
+  int ret;
   assert(cp);
 
   cp->current_color = color;
   cp_apply(cp);
-  return printf("%s",text);
+
+  ret = printf("%s",text);
+
+  cp_reset(cp);
+
+  return ret;
 }
 
 void
