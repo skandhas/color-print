@@ -57,7 +57,7 @@ cp_print(cp_state_t cp, enum cp_color color, const char * text)
 }
 
 void
-cp_reset(struct cp_state * cp)
+cp_reset(cp_state_t cp)
 {
   assert(cp);
 
