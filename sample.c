@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "color_print.h"
 
 int main(int argc, char *argv[])
@@ -19,6 +20,7 @@ int main(int argc, char *argv[])
    
   for (i = 0; i < sizeof(sample)/sizeof(out_struct); ++i){
     cp_print(cp,sample[i].color,sample[i].text);
+    printf ("Normal Text\n"); 
   }
   
   cp_close(cp);
