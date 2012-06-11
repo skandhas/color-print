@@ -3,7 +3,7 @@
 #include "color_print.h"
 
 /* Initialize color-print module */
-cp_state_t  cp  = cp_init(); 
+cp_state_ref  cp  = cp_init(); 
 
 /* Print text */
 cp_print(cp,CP_RED,"Red Text\n");

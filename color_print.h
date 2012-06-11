@@ -25,14 +25,13 @@ enum  cp_color {
 };
 
 /* Color-Print State */
-struct cp_state;
-typedef struct cp_state * cp_state_t;
+typedef struct cp_state * cp_state_ref;
 
 /* Module Functions */
-cp_state_t cp_init();
-int cp_print(cp_state_t, enum cp_color, const char * );
-void cp_reset(cp_state_t );
-void cp_close(cp_state_t );
+cp_state_ref cp_init();
+int  cp_print(cp_state_ref, enum cp_color, const char * );
+void cp_reset(cp_state_ref );
+void cp_close(cp_state_ref );
 
 #if defined(__cplusplus)
 }

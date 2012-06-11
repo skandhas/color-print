@@ -11,16 +11,16 @@ struct cp_state
 };
 
 static int
-cp_apply(cp_state_t cp)
+cp_apply(cp_state_ref cp)
 {
   return SetConsoleTextAttribute(cp->std_output,cp->current_color) == TRUE ? 0:(-1);
 } 
 
-cp_state_t 
+cp_state_ref 
 cp_init()
 {
-  HANDLE     std_output;
-  cp_state_t cp; 
+  HANDLE       std_output;
+  cp_state_ref cp; 
   CONSOLE_SCREEN_BUFFER_INFO screen_buff;
   
   std_output = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -41,7 +41,7 @@ cp_init()
 }
 
 int 
-cp_print(cp_state_t cp, enum cp_color color, const char * text)
+cp_print(cp_state_ref cp, enum cp_color color, const char * text)
 {
   int ret;
   assert(cp);
@@ -57,7 +57,7 @@ cp_print(cp_state_t cp, enum cp_color color, const char * text)
 }
 
 void
-cp_reset(cp_state_t cp)
+cp_reset(cp_state_ref cp)
 {
   assert(cp);
 
@@ -66,7 +66,7 @@ cp_reset(cp_state_t cp)
 }
 
 void 
-cp_close(cp_state_t cp)
+cp_close(cp_state_ref  cp)
 {
   assert(cp);
 

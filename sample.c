@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     {CP_YELLOW,"Yellow Text\n"}
   };
 
-  cp_state_t  cp  = cp_init(); 
+  cp_state_ref  cp  = cp_init(); 
    
   for (i = 0; i < sizeof(sample)/sizeof(out_struct); ++i){
     cp_print(cp,sample[i].color,sample[i].text);
